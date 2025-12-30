@@ -15,7 +15,7 @@ button.addEventListener("click", () => {
     const randomNumber = Math.floor(Math.random() * 51) + 50;
 
     buffer.classList.add("hidden");
-    if (randomNumber > 80) {
+    if (randomNumber > 60) {
       result.innerText = `🚑 Mental Score ${randomNumber}  
 মাথা আছে, কিন্তু warranty শেষ 🤡
 `;
