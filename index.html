@@ -11,9 +11,14 @@
     <div id="main">
         <div id="center_div">
             <h1>Check your Mental State</h1>
-            <input type="text" placeholder="Enter your name" >
-            <input type="number" placeholder="Enter your age">
-            <button id="submitBtn">Submit</button>
+
+            <!-- FORM START -->
+            <form id="mentalForm">
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <input type="number" id="age" placeholder="Enter your age" required min="1">
+                <button type="submit" id="submitBtn">Submit</button>
+            </form>
+            <!-- FORM END -->
 
             <!-- Funny buffer + result -->
             <div id="buffer" class="hidden">

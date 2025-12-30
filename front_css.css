@@ -13,33 +13,51 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
+/* Main Card */
 #main {
     background: #fff;
     padding: 35px;
     border-radius: 16px;
-    width: 320px;
+    width: 340px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
+/* Center Content */
 #center_div {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
     text-align: center;
 }
 
+/* FORM FIX */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Inputs */
 input {
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1.5px solid #ccc;
     font-size: 15px;
     outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
     border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
+/* ❌ Invalid Input Styling */
+input:invalid {
+    border-color: #e74c3c;
+}
+
+/* Button */
 button {
     padding: 12px;
     border-radius: 8px;
@@ -48,11 +66,12 @@ button {
     cursor: pointer;
     background: #667eea;
     color: white;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 button:hover {
     background: #5563c1;
+    transform: scale(1.02);
 }
 
 button:disabled {
@@ -60,17 +79,17 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* Funny buffer */
+/* Funny Buffer */
 #buffer {
     font-size: 18px;
     font-weight: bold;
     animation: bounce 1s infinite;
 }
 
-/* Dots animation */
+/* Dots Animation */
 .dots::after {
     content: "";
-    animation: dots 1.5s infinite;
+    animation: dots 1.5s steps(3, end) infinite;
 }
 
 @keyframes dots {
@@ -80,17 +99,27 @@ button:disabled {
     100% { content: "..."; }
 }
 
+/* Bounce Effect */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    50% { transform: translateY(-6px); }
 }
 
+/* Hide Elements */
 .hidden {
     display: none;
 }
 
+/* Result Text */
 #result {
     font-size: 20px;
     font-weight: bold;
     color: #764ba2;
+    animation: pop 0.4s ease;
+}
+
+/* Result Pop Animation */
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
