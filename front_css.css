@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+#main {
+    background: #fff;
+    padding: 35px;
+    border-radius: 16px;
+    width: 320px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+#center_div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #667eea;
+}
+
+button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: #667eea;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #5563c1;
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* Funny buffer */
+#buffer {
+    font-size: 18px;
+    font-weight: bold;
+    animation: bounce 1s infinite;
+}
+
+/* Dots animation */
+.dots::after {
+    content: "";
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0% { content: ""; }
+    33% { content: "."; }
+    66% { content: ".."; }
+    100% { content: "..."; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.hidden {
+    display: none;
+}
+
+#result {
+    font-size: 20px;
+    font-weight: bold;
+    color: #764ba2;
+}
